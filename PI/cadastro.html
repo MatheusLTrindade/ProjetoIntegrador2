@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- css -->
+        <link rel="stylesheet" href="css/cadastro/style_cadastro.css" />
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+        <title>DevBank</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2>Criar Conta</h2>
+            </div>
+
+            <form action="php/client.php" method="POST" id="form" class="form">
+            <!-- <form id="form" class="form"> -->
+                <div class="grid">
+                    <div class="form-control">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" name="name" id="name" class="name"/>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf" onkeypress="onlynumber(), mask()" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+
+                    <div class="gender">
+                        <label class="radio-title">Gênero</label>
+                        <label class="radio-txt">
+                            <input type="radio" name="gender" value="male" required>Masculino
+                        </label>
+                        <label class="radio-txt">
+                            <input type="radio" name="gender" value="female">Feminino
+                        </label>
+                        <!-- <small>Mensagem de erro</small> -->
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="birth-date">Data de nascimento</label>
+                        <input type="date" name="birth-date" id="birth-date" onkeypress="onlynumber(), mask()" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="cep">CEP</label>
+                        <input type="text" name="cep" id="cep" onfocusout="viacep()" onkeypress="onlynumber(), mask()" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="address">Endereço</label>
+                        <input type="text" name="address" id="address" readonly />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="district">Bairro</label>
+                        <input type="text" name="district" id="district" readonly />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="number-address">Numero</label>
+                        <input type="text" name="number-address" id="number-address" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="complement">Complemento</label>
+                        <input type="text" name="complement" id="complement" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="state">Estado</label>
+                        <input type="text" name="state" id="state" readonly />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="city">Cidade</label>
+                        <input type="text" name="city" id="city" readonly />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="cell">Celular</label>
+                        <input type="text" name="cell" id="cell" onkeypress="onlynumber(), mask()"  />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <br>
+
+                    <div class="form-control">
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="email-confirmation">Confirme seu E-mail</label>
+                        <input type="text" id="email-confirmation" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+                    
+                    <br><div></div>
+
+                    <div class="form-control">
+                        <label for="password">Crie sua senha</label>
+                        <input type="password" name="password" id="password" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="password-confirmation">Repita a senha</label>
+                        <input type="password" id="password-confirmation" />
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <small>Mensagem de erro</small>
+                    </div>
+                </div>
+                
+
+                <button class="button" type="submit" name="submit">Cadastrar</button>
+                <!-- TODO: criar um modal de confirmação-->
+            </form>
+
+            <footer>
+                <p>&copy; DevBankOficial</p>
+            </footer>
+        </div>
+
+        <!-- js -->
+        <script src="scr/cadastro/script_cadastro.js"></script>
+        <script src="scr/cadastro/function_cadastro.js"></script>
+
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/6c95b90954.js" crossorigin="anonymous"></script>
+
+        <!-- via cep -->
+        <script type="text/javascript" src="https://code.jquery.com./jquery-3.2.1.min.js"></script>
+
+        <!-- jQuery mask -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    </body>
+
+    <!-- <script>
+        $( "#cell" ).keypress(function() {
+            $(this).mask('(00) 0 0000-0000');
+        }); 
+    </script> -->
+</html>
