@@ -1,62 +1,37 @@
 .home10{
-    background-image: linear-gradient(to bottom, #0d0d0d, #363636, #626262, #929292, #c5c5c5);
+    background-image: url("../../img/home/imagens-pi.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #F0F2F5;
+    background-position-x: right;
     overflow: hidden;
     overflow-x: hidden;
     width: 100%;
-    height: 160vh;
-    display: flex;
+    height: 100vh;
     align-items: center;
+    display: flex;
+    color: var(--jet);
     justify-content: space-between;
     padding: 0px 10%;
 }
 
-.home10 .home-text, .home-text2, .home-text3{
-    width: 37rem;
-    height: 20rem;
-    border: 2px solid var(--flourescent-blue);
-    border-radius: 10px 10px;
-    margin-top: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
+.home10 div{
+    align-items: left ;    
 }
 
-/* text1 */
-.home10 .home-text .text-h4{
-    font-size: 1.5rem;
-    color: var(--ligth-sea-green);
-    margin-bottom: 1rem;
+.home10 p{ 
+    text-align: center;
+    
 }
 
-.home10 .home-text .text-h1{
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    line-height: 4rem;
-}
-
-.home10 .home-text p{
-    margin-bottom: 4rem;
-}
-
-.home10 .home-img .img2{
+.home11 {
+    overflow: hidden;
+    overflow-x: hidden;
     width: 100%;
-    border-radius: 900px 100px;
-    margin-left: 12.8rem;
-    margin-top: 10rem;
-}
-
-/* TODO: efeito pulse + brightness  */
-.home10 .home-img .img2{
-    animation: pulseBrigthness 0.7s infinite;
-    animation-direction: alternate;
-}
-  
-@keyframes pulseBrigthness {
-    0% {
-        transform: scale(1);
-        filter: brightness(100%);
-    }
-    100% {
-        transform: scale(1.02);
-        filter: brightness(120%);
-    }
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    color: var(--jet);
+    justify-content: space-between;
+    padding: 0px 10%;
 }
