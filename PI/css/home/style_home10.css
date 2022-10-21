@@ -46,11 +46,11 @@
 
 /* TODO: efeito pulse + brightness  */
 .home10 .home-img .img2{
-    animation: pulse 0.7s infinite;
+    animation: pulseBrigthness 0.7s infinite;
     animation-direction: alternate;
 }
   
-@keyframes pulse {
+@keyframes pulseBrigthness {
     0% {
         transform: scale(1);
         filter: brightness(100%);

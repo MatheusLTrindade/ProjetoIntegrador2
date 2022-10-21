@@ -14,6 +14,9 @@
 a {
     text-decoration: none;
 }
+a:hover{
+    color: var(--honeydew);
+}
 
 /* Variaveis */
 :root{
@@ -86,6 +89,11 @@ body{
     transition: all 0.5s;
 }
 
+.navigation ul span:hover{
+    color: var(--flourescent-blue);
+    font-size: 120%;
+}
+
 .menu{
     cursor: pointer;
     display: none;
@@ -156,9 +164,22 @@ body{
     border-radius: 10px 100px 10px 100px;
     font-weight: 700;
     transition: all 0.5s;
+    animation: pulseButton 0.7s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pulseButton {
+    0% {
+        filter: brightness(100%);
+    }
+    100% {
+        filter: brightness(130%);
+    }
 }
 
 .home-btn:hover{
+    font-size: 110%;
+    animation: none;
     background: var(--flourescent-blue);
 }
 
@@ -185,11 +206,18 @@ body{
 }
 
 .home2 .card{
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
+    height: 100%;
+    padding-top: 1rem;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: all ease 0.5s;
+}
+
+.home2 .card:hover{
+    box-shadow: 0px 0px 15px #26bfba84;
 }
 
 .home2 .card-text{
@@ -228,6 +256,60 @@ body{
     padding-top: 1rem;
     padding-bottom: 3rem;
 }
+
+/* LANDING PAGE 4 */
+.home4{
+    background-color: #0d0d0d;
+    overflow: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.home4 .home-right{
+    flex: 1;
+    padding: 10% 10% 10% 10%;
+    height: 100vh;
+}
+
+.home4 .home-right h1 {
+    text-align: justify;
+    font-size: 6rem;
+    line-height: 1rem;
+}
+
+.home4 .home-right h1 span{
+    font-size: 1.9rem;
+}
+
+.home4 .home-right b, 
+.home4 .home-right p{
+    color: var(--ash-gray);
+}
+
+.home4 .home-right h5{
+    padding: 3rem 0 4rem 0;
+}
+
+.home4 .home-right p{
+    padding-bottom: 1rem;
+}
+
+.home4 .home-left{
+    flex: 1.5;
+    height: 100vh;
+}
+
+.home4 .home-left img{
+    width: 100%;
+    height: 100%;
+}
+/* LANDING PAGE 5 */
+
 
 /* Mobile */
 @media (max-width:785px){
