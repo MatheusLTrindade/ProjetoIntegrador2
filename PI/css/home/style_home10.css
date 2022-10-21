@@ -10,40 +10,6 @@
     padding: 0px 10%;
 }
 
-.home10 .home-text, .home-text2, .home-text3{
-    width: 37rem;
-    height: 20rem;
-    border: 2px solid var(--flourescent-blue);
-    border-radius: 10px 10px;
-    margin-top: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
-}
-
-/* text1 */
-.home10 .home-text .text-h4{
-    font-size: 1.5rem;
-    color: var(--ligth-sea-green);
-    margin-bottom: 1rem;
-}
-
-.home10 .home-text .text-h1{
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    line-height: 4rem;
-}
-
-.home10 .home-text p{
-    margin-bottom: 4rem;
-}
-
-.home10 .home-img .img2{
-    width: 100%;
-    border-radius: 900px 100px;
-    margin-left: 12.8rem;
-    margin-top: 10rem;
-}
-
 /* TODO: efeito pulse + brightness  */
 .home10 .home-img .img2{
     animation: pulseBrigthness 0.7s infinite;
