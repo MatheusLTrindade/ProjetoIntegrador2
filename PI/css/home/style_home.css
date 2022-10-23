@@ -91,7 +91,7 @@ body{
 
 .navigation ul span:hover{
     color: var(--flourescent-blue);
-    font-size: 120%;
+    font-size: 1.8rem;
 }
 
 .menu{
@@ -272,46 +272,143 @@ body{
     padding: 0;
 }
 
-.home4 .home-right{
-    flex: 1;
+.home4 .home-left{
+    width: 50%;
     padding: 10% 10% 10% 10%;
     height: 100vh;
 }
 
-.home4 .home-right h1 {
+.home4 .home-left h1 {
     text-align: justify;
     font-size: 6rem;
     line-height: 1rem;
 }
 
-.home4 .home-right h1 span{
+.home4 .home-left h1 span{
     font-size: 1.9rem;
 }
 
-.home4 .home-right b, 
-.home4 .home-right p{
+.home4 .home-left b, 
+.home4 .home-left p{
     color: var(--ash-gray);
 }
 
-.home4 .home-right h5{
+.home4 .home-left h5{
     padding: 3rem 0 4rem 0;
 }
 
-.home4 .home-right p{
+.home4 .home-left p{
     padding-bottom: 1rem;
 }
 
-.home4 .home-left{
-    flex: 1.5;
+.home4 .home-right{
+    width: 50%;
     height: 100vh;
 }
 
-.home4 .home-left img{
+.home4 .home-right img{
     width: 100%;
     height: 100%;
 }
 
 /* LANDING PAGE 5 */
+.home5{
+    background-color: #FFF;
+    color: #2A2A42;
+    overflow: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.home5 .home-right{
+    width: 50%;
+    padding: 5% 10%;
+    height: 100vh;
+}
+
+.home5 .home-right h1 {
+    text-align: justify;
+    font-size: 5rem;
+}
+
+.home5 .home-right h2 {
+    text-align: justify;
+}
+
+
+.home5 .home-right b, 
+.home5 .home-right p{
+    color: #A1A2A6;
+}
+
+.home5 .home-right h5{
+    padding: 2rem 0 2rem 0;
+}
+
+.home5 .home-right p{
+    padding-bottom: 1rem;
+}
+
+.home5 .home-left{
+    width: 50%;
+    height: 100vh;
+}
+
+.home5 .home-left img{
+    width: 100%;
+    height: 100%;
+}
+
+/* LANDING PAGE 6 */
+.home6{
+    background-image: url(../../img/home/equipeBank.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--jet);
+    overflow: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.home6 .home-left{
+    width: 50%;
+    background-color: rgba(225, 225, 225, 0.5);
+    padding: 5% 10% ;
+    height: 100vh;
+}
+
+.home6 .home-left h1 {
+    text-align: justify;
+    font-size: 6rem;
+}
+
+.home6 .home-left h1 span{
+    font-size: 1.9rem;
+}
+
+.home6 .home-left b, 
+.home6 .home-left p{
+    color: #28475E;
+}
+
+.home6 .home-left h5{
+    padding: 2rem 0 2rem 0;
+}
+
+.home6 .home-left p{
+    padding-bottom: 1rem;
+}
 
 /* FOOTER */
 footer{

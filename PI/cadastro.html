@@ -25,23 +25,20 @@
             <!-- <form id="form" class="form"> -->
                 <div class="grid">
                     <div class="form-control">
-                        <label for="name">Nome Completo</label>
-                        <input type="text" name="name" id="name" class="name"/>
+                        <input type="text" name="name" id="name" class="name" placeholder="Nome Completo"/>
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
                     
                     <div class="form-control">
-                        <label for="cpf">CPF</label>
-                        <input type="text" name="cpf" id="cpf" onkeypress="onlynumber(), mask()" />
+                        <input type="text" name="cpf" id="cpf" placeholder="CPF" onkeypress="onlynumber(), mask()" />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
 
                     <div class="gender">
-                        <label class="radio-title">Gênero</label>
                         <label class="radio-txt">
                             <input type="radio" name="gender" value="male" required>Masculino
                         </label>
@@ -52,119 +49,101 @@
                     </div>
     
                     <div class="form-control">
-                        <label for="birth-date">Data de nascimento</label>
-                        <input type="date" name="birth-date" id="birth-date" onkeypress="onlynumber(), mask()" />
+                        <input type="text" name="birth-date" id="birth-date" placeholder="Data de Nascimento" onkeypress="onlynumber(), mask()" />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="cep">CEP</label>
-                        <input type="text" name="cep" id="cep" onfocusout="viacep()" onkeypress="onlynumber(), mask()" />
+                        <input type="text" name="cep" id="cep" onfocusout="viacep()" placeholder="CEP" onkeypress="onlynumber(), mask()" />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="address">Endereço</label>
-                        <input type="text" name="address" id="address" readonly />
+                        <input type="text" name="address" id="address" placeholder="Endereço" readonly />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="district">Bairro</label>
-                        <input type="text" name="district" id="district" readonly />
+                        <input type="text" name="district" id="district" placeholder="Bairro" readonly />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="number-address">Numero</label>
-                        <input type="text" name="number-address" id="number-address" />
+                        <input type="text" name="number-address" id="number-address" placeholder="Número"/>
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="complement">Complemento</label>
-                        <input type="text" name="complement" id="complement" />
+                        <input type="text" name="complement" id="complement" placeholder="Complemento"/>
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="state">Estado</label>
-                        <input type="text" name="state" id="state" readonly />
+                        <input type="text" name="state" id="state" placeholder="Estado" readonly />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="city">Cidade</label>
-                        <input type="text" name="city" id="city" readonly />
+                        <input type="text" name="city" id="city" placeholder="Cidade" readonly />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="cell">Celular</label>
-                        <input type="text" name="cell" id="cell" onkeypress="onlynumber(), mask()"  />
+                        <input type="text" name="cell" id="cell" placeholder="Celular" onkeypress="onlynumber(), mask()"  />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
-    
-                    <br>
 
                     <div class="form-control">
-                        <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email" />
+                        <input type="text" name="email" id="email" placeholder="E-mail" />
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="email-confirmation">Confirme seu E-mail</label>
-                        <input type="text" id="email-confirmation" />
+                        <input type="text" id="email-confirmation" placeholder="Confirme seu E-mail"/>
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
-                    
-                    <br><div></div>
 
                     <div class="form-control">
-                        <label for="password">Crie sua senha</label>
-                        <input type="password" name="password" id="password" />
+                        <input type="password" name="password" id="password" placeholder="Crie sua senha"/>
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
     
                     <div class="form-control">
-                        <label for="password-confirmation">Repita a senha</label>
-                        <input type="password" id="password-confirmation" />
+                        <input type="password" id="password-confirmation" placeholder="Confirme sua senha"/>
                         <i class="fas fa-exclamation-circle"></i>
                         <i class="fas fa-check-circle"></i>
                         <small>Mensagem de erro</small>
                     </div>
                 </div>
                 
-
                 <button class="button" type="submit" name="submit">Cadastrar</button>
                 <!-- TODO: criar um modal de confirmação-->
             </form>
-
+            
             <footer>
                 <p>&copy; DevBankOficial</p>
             </footer>
@@ -184,10 +163,4 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
     </body>
-
-    <!-- <script>
-        $( "#cell" ).keypress(function() {
-            $(this).mask('(00) 0 0000-0000');
-        }); 
-    </script> -->
 </html>
