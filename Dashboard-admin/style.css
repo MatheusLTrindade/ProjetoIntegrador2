@@ -91,7 +91,7 @@ body{
     width: 100%;
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 14rem auto 23rem;
+    grid-template-columns: 14rem 55rem 23rem;
 }
 
 a{
@@ -218,7 +218,7 @@ aside .sidebar a span{
 
 aside .sidebar a:last-child{
     position: absolute;
-    bottom: 2rem;
+    bottom: 8rem;
     width: 100%;
 }
 
@@ -321,43 +321,6 @@ main .insights h3{
     font-size: 1rem;
 }
 
-main .insights .progress{
-    position: relative;
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-}
-
-main .insights svg{
-    width: 7rem;
-    height: 7rem;
-}
-
-main .insights svg circle{
-    fill:none;
-    stroke: var(--color-primary);
-    stroke-width: 14;
-    stroke-linecap: round;
-    transform: translate(5px, 5px);
-    /* stroke-dasharray: 110;
-    stroke-dashoffset: 92; */
-}
-
-main .insights .sales svg circle{
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .insights .expenses svg circle{
-    stroke-dashoffset: 20;
-    stroke-dasharray: 80;
-}
-
-main .insights .income svg circle{
-    stroke-dashoffset: 35;
-    stroke-dasharray: 110;
-}
-
 main .insights .progress .number{
     position: absolute;
     top: 0;
@@ -375,43 +338,25 @@ main .insights small{
 }
 
 /* =================== RECENT ORDERS ==================== */
-main .recent-orders{
+main .transaction-volume{
     margin-top: 2rem;
 }
 
-main.recent-orders h2{
+main.transaction-volume h2{
     margin-bottom: 0.8rem;
 }
 
-main .recent-orders table{
+main .transaction-volume .grafic{
     background: var(--color-white);
-    width: 100%;
-    border-radius: var(--card-border-radius);
     padding: var(--card-padding);
-    text-align: center;
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
 }
 
-main .recent-orders table:hover{
+main .transaction-volume .grafic:hover{
     box-shadow: none;
-}
-
-main table tbody td{
-    height: 2.8rem;
-    border-bottom: 1px solid var(--color-light);
-    color: var(--color-dark-variant);
-}
-
-main table tbody tr:last-child td{
-    border: none;
-}
-
-main .recent-orders a{
-    text-align: center;
-    display: block;
-    margin: 1rem auto;
-    color: var(--color-primary);
 }
 
 /* =================== RIGHT ==================== */
@@ -488,79 +433,6 @@ main .recent-orders a{
     margin-bottom: 1rem;
 }
 
-/* =================== SALES ANALYTICS ==================== */
-.right .sales-analytics{
-    margin-top: 2rem;
-}
-
-.right .sales-analytics h2{
-    margin-bottom: 0.8rem;
-}
-
-.right .sales-analytics .item{
-    background: var(--color-white);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.7rem;
-    padding: 1.4rem var(--card-padding);
-    border-radius: var(--border-radius-3);
-    box-shadow: var(--box-shadow);
-    transition: all 300ms ease;
-}
-
-.right .sales-analytics .item:hover{
-    box-shadow: none;
-}
-
-.right .sales-analytics .item .right{
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    margin: 0;
-    width: 100%;
-}
-
-.right .sales-analytics .item .icon{
-    padding: 0.6rem;
-    color: var(--color-white);
-    border-radius: 50%;
-    background: var(--color-primary);
-    display: flex;
-}
-
-.right .sales-analytics .item.offline .icon{
-    background: var(--color-danger);
-}
-
-.right .sales-analytics .item.customers .icon{
-    background: var(--color-success);
-}
-
-.right .sales-analytics .add-product{
-    background-color: transparent;
-    border: 2px dashed var(--color-primary);
-    color: var(--color-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.right .sales-analytics .add-product:hover{
-    background: var(--color-primary);
-    color: var(--color-white);
-}
-
-.right .sales-analytics .add-product div{
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.right .sales-analytics.add-product div h3{
-    font-weight: 600;
-}
-
 /* =================== @MEDIA ULTRAWIDE ==================== */
 @media (min-width:1400px){
     body{
@@ -599,7 +471,7 @@ main .recent-orders a{
         grid-template-columns: 1fr;
         gap: 0;
     }
-    main .recent-orders{
+    main .transaction-volume{
         width: 87%;
         position: absolute;
         left: 54%;
@@ -647,12 +519,12 @@ main .recent-orders a{
         padding: 0 1rem;
     }
 
-    main .recent-orders{
+    main .transaction-volume{
         position: relative;
         margin: 3rem 0 0 -1rem;
         width: 100%;
     }
-    main .recent-orders table{
+    main .transaction-volume table{
         width: 100%;
         margin: 0;
     }
