@@ -3,6 +3,13 @@ const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler");
 
+const containerTable = document.querySelector(".container-table");
+const tableTransactions = document.querySelector(".transactions");
+
+const BtnContatos = document.querySelector("#contatos");
+
+const tableContatos = document.querySelector(".contatos");
+
 // Show sidebar
 menuBtn.addEventListener('click', () => {
     sideMenu.style.display = "block";
@@ -37,8 +44,47 @@ Orders.forEach(order => {
                             `;
                             // <td> Célula de dados
     tr.innerHTML = trContent;
-    document.querySelector('table tbody').appendChild(tr);
+    tableTransactions.querySelector('table tbody').appendChild(tr);
 })
+
+
+// TABLE CONTATOS
+
+BtnContatos.addEventListener('click', () =>{
+  cont();
+})
+
+function cont () {
+    // BtnContatos.classList.add('active'); //Colocar função de liga e desliga
+    tableTransactions.style.display = "none";
+    tableContatos.style.display = "table";
+    containerTable.style.height = "35rem";
+    // orderALL.style.visibility = "hidden";
+    // insights.style.display = "none";
+    // availableProduts.style.display = "none";
+    // main.style.width = "140%";
+    recentOrders.querySelector('h2').textContent = "Contatos";
+
+    Contatos.forEach(order => {
+        const tr = document.createElement('tr');
+        const trContent = `
+                            <td>${order.Name}</td> 
+                            <td>${order.CPF}</td>
+                            <td>${order.Agencia}</td>
+                            <td>${order.Conta}</td>
+                            <td>${order.PIX}</td>
+                            `;
+                            // <td> Célula de dados
+        tr.innerHTML = trContent;
+        tableContatos.querySelector('table tbody').appendChild(tr);
+    })
+}
+
+
+
+
+
+
 
 
 

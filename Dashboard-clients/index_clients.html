@@ -31,7 +31,7 @@
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="contatos">
                     <span class="material-icons-sharp">person_outline</span>
                     <h3>Contatos</h3>
                 </a>
@@ -66,8 +66,8 @@
         <main>
             <h1>Dashboard CLIENTS</h1>
             
-            <div class="date">
-                <input type="text" value="SALDO">
+            <div class="balance">
+                    <h2>R$ 5.000,00</h2>
             </div>
 
             <div class="insights">
@@ -128,21 +128,37 @@
             </div>
             <!-------------------- END INSIGHTS -------------------->
             <div class="recent-orders">
-                <h2>Recent Orders</h2>
-                <table><!-- criar tabela -->
-                    <thead><!-- títulos das colunas -->
-                        <tr><!-- linha da tabela -->
-                            <th>User Name</th><!-- célula de cabeçalho -->
-                            <th>Order Number</th>
-                            <th>Value</th>
-                            <th>Type</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody><!-- linha dos detalhes -->
-                        <!-- <tr> and <td> are in JS -->
-                    </tbody>
-                </table>
+                <h2>Recent Transaction</h2>
+                <div class="container-table">
+                    <table class="transactions"><!-- criar tabela -->
+                        <thead><!-- títulos das colunas -->
+                            <tr><!-- linha da tabela -->
+                                <th>User Name</th><!-- célula de cabeçalho -->
+                                <th>Order Number</th>
+                                <th>Value</th>
+                                <th>Type</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody><!-- linha dos detalhes -->
+                            <!-- <tr> and <td> are in JS -->
+                        </tbody>
+                    </table>
+                    <table class="contatos">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>CPF</th>
+                                <th>Agência</th>
+                                <th>Conta Corrente</th>
+                                <th>Chave PIX</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr> and <td> are in JS -->
+                        </tbody>
+                    </table>
+                </div>
                 <!-- END TABLE -->
                 <a href="#">Show All</a>
             </div>
@@ -205,7 +221,7 @@
             </div>
             <!-------------------- END RECENT UPDATES -------------------->
             <div class="sales-analytics">
-                <h2>Sales Analytics</h2>
+                <h2>Quote Coins</h2>
 
                 <div class="item online" >
                     <div class="icon">
@@ -260,7 +276,8 @@
         </div>
         <!-------------------- END RIGHT -------------------->
     </div>
-    <script src="js/orders_clients.js"></script>
+    <script src="js/tables/orders_clients.js"></script>
+    <script src="js/tables/contatos.js"></script>
     <script src="js/script_clients.js"></script>
 
     <!---------- API COTAÇÃO (EM TESTE) ---------->

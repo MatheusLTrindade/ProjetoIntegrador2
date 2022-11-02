@@ -339,6 +339,7 @@ main .insights small{
 
 /* =================== RECENT ORDERS ==================== */
 main .transaction-volume{
+    width: 145%;
     margin-top: 2rem;
 }
 
