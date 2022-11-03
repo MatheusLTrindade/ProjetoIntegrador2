@@ -1,7 +1,7 @@
 const form = document.getElementById("form")
-const name = document.getElementById("name")
+const nameUser = document.getElementById("name-user")
 const cpf = document.getElementById("cpf")
-// const gender = document.getElementById("gender")
+const gender = document.getElementById("gender")
 const birthDate = document.getElementById("birth-date")
 const cep = document.getElementById("cep")
 const address = document.getElementById("address")
@@ -12,34 +12,20 @@ const complement = document.getElementById("complement")
 const city = document.getElementById("city")
 const cell = document.getElementById("cell")
 const email = document.getElementById("email")
-const emailConfirmation = document.getElementById("email-confirmation")
 const password = document.getElementById("password")
 const passwordConfirmation = document.getElementById("password-confirmation")
+const typeAccount = document.getElementById("type-account")
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
     checkInputs();
-
-    const formControls = form.querySelectorAll(".form-control")
-
-    const formIsValid = [... formControls].every((formControl) => {
-        return (formControl.className === "form-control success");
-    });
-
-    // Validação do submit
-    if (formIsValid) {
-        console.log("O formulário está 100% válido!");
-    } else {
-        console.log("ERRO!");
-        e.preventDefault();
-    }
-
 });
 
 function checkInputs() {
-    const nameValue = name.value;
+    const nameValue = nameUser.value;
     const cpfValue = cpf.value;
-    // const genderContent = gender.content;
+    const genderContent = gender.content;
     const birthDateValue = birthDate.value;
     const cepValue = cep.value;
     const addressValue = address.value;
@@ -50,82 +36,20 @@ function checkInputs() {
     const cityValue = city.value;
     const cellValue = cell.value;
     const emailValue = email.value;
-    const emailConfirmationValue = emailConfirmation.value;
     const passwordValue = password.value;
     const passwordConfirmationValue = passwordConfirmation.value;
+    const typeAccountValue = typeAccount.value;
 
     if(nameValue === ""){
-        setErrorFor(name, "O nome é obrigatório.");
+        setErrorFor(nameUser, "O nome é obrigatório.");
     } else {
-        setSuccessFor(name)
+        setSuccessFor(nameUser)
     }
 
     if(cpfValue === ""){
         setErrorFor(cpf, "O CPF é obrigatório.");
     } else {
         setSuccessFor(cpf)
-    }
-
-    // if(genderContent === ""){
-    //     setErrorFor(gender, "O gênero é obrigatório.");
-    // } else {
-    //     setSuccessFor(gender)
-    // }
-
-    if(birthDateValue === ""){
-        setErrorFor(birthDate, "A data de nscimento é obrigatória.");
-    } else {
-        setSuccessFor(birthDate)
-    }
-
-    if(cepValue === ""){
-        setErrorFor(cep, "O CEP é obrigatório.");
-    } else if (cepValue.length !== 9) {
-        setErrorFor(cep, "Por favor, insira um CEP válido.");
-    } else {
-        setSuccessFor(cep)
-    }
-
-    if(addressValue === ""){
-        setErrorFor(address, "Por favor, verifique o CEP.");
-    } else {
-        setSuccessFor(address)
-    }
-
-    if(districtValue === ""){
-        setErrorFor(district, "Por favor, verifique o CEP.");
-    } else {
-        setSuccessFor(district)
-    }
-
-    if(numberAddressValue === ""){
-        setErrorFor(numberAddress, "O número da residência é obrigatório.");
-    } else {
-        setSuccessFor(numberAddress)
-    }
-    
-    if(complementValue === ""){
-        setSuccessFor(complement);
-    } else {
-        setSuccessFor(complement)
-    }
-
-    if(stateValue === ""){
-        setErrorFor(state, "Por favor, verifique o CEP.");
-    } else {
-        setSuccessFor(state)
-    }
-
-    if(cityValue === ""){
-        setErrorFor(city, "Por favor, verifique o CEP.");
-    } else {
-        setSuccessFor(city)
-    }
-
-    if(cellValue === ""){
-        setErrorFor(cell, "O celular é obrigatório.");
-    } else {
-        setSuccessFor(cell)
     }
 
     if (emailValue === "") {
@@ -136,14 +60,28 @@ function checkInputs() {
         setSuccessFor(email);
     }
 
-    if (emailConfirmationValue === "") {
-        setErrorFor(emailConfirmation, "A confirmação de e-mail é obrigatória.");
-    } else if(!checkEmail(emailConfirmationValue)){
-        setErrorFor(email, "Por favor, insira um email válido.");
-    }else if (emailConfirmationValue !== emailValue) {
-        setErrorFor(emailConfirmation, "Os e-mails não conferem.");
+    if(genderContent === ""){
+        setErrorFor(gender, "O gênero é obrigatório.");
     } else {
-        setSuccessFor(emailConfirmation);
+        setSuccessFor(gender)
+    }
+
+    if(birthDateValue === ""){
+        setErrorFor(birthDate, "A data de nscimento é obrigatória.");
+    } else {
+        setSuccessFor(birthDate)
+    }
+    
+    if(cellValue === ""){
+        setErrorFor(cell, "O celular é obrigatório.");
+    } else {
+        setSuccessFor(cell)
+    }
+
+    if(typeAccountValue === ""){
+        setErrorFor(typeAccount, "Por favor, escolha um tipo de conta.");
+    } else {
+        setSuccessFor(typeAccount)
     }
 
     if (passwordValue === "") {
@@ -162,6 +100,60 @@ function checkInputs() {
         setSuccessFor(passwordConfirmation);
     }
 
+    if(cepValue === ""){
+        setErrorFor(cep, "O CEP é obrigatório.");
+    } else if (cepValue.length !== 9) {
+        setErrorFor(cep, "Por favor, insira um CEP válido.");
+    } else {
+        setSuccessFor(cep)
+    }
+
+    if(stateValue === ""){
+        setErrorFor(state, "Por favor, verifique o CEP.");
+    } else {
+        setSuccessFor(state)
+    }
+        
+    if(cityValue === ""){
+        setErrorFor(city, "Por favor, verifique o CEP.");
+    } else {
+        setSuccessFor(city)
+    }
+    
+    if(districtValue === ""){
+        setErrorFor(district, "Por favor, verifique o CEP.");
+    } else {
+        setSuccessFor(district)
+    }
+
+    if(addressValue === ""){
+        setErrorFor(address, "Por favor, verifique o CEP.");
+    } else {
+        setSuccessFor(address)
+    }
+
+    if(numberAddressValue === ""){
+        setErrorFor(numberAddress, "O número da residência é obrigatório.");
+    } else {
+        setSuccessFor(numberAddress)
+    }
+    
+    if(complementValue === ""){
+        setSuccessFor(complement);
+    } else {
+        setSuccessFor(complement)
+    }
+    
+    const formControls = form.querySelectorAll(".mb-3")
+    const formIsValid = [...formControls].every(mb3 => {
+        return (mb3.className === "mb-3 success");
+    });
+
+    // Validação do submit
+    if (formIsValid) {
+        console.log("O formulário está 100% válido!");
+    }
+
 }
 
 function setErrorFor(input, message) {
@@ -171,15 +163,15 @@ function setErrorFor(input, message) {
     // Adicionar a mensagem de erro
     small.innerText = message;
 
-    // Adicionar a classe de sucesso
-    formControl.className = "form-control error";
+    // Adicionar a classe de erro
+    formControl.className = "mb-3 error";
 }
 
-function setSuccessFor(input, message) {
+function setSuccessFor(input) {
     const formControl = input.parentElement;
 
     // Adicionar a classe de sucesso
-    formControl.className = "form-control success";
+    formControl.className = "mb-3 success";
 }
 
 // Checar validação do e-mail
