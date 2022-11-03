@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
 function checkInputs() {
     const nameValue = nameUser.value;
     const cpfValue = cpf.value;
-    const genderContent = gender.content;
+    const genderContent = gender.value;
     const birthDateValue = birthDate.value;
     const cepValue = cep.value;
     const addressValue = address.value;
@@ -152,6 +152,9 @@ function checkInputs() {
     // Validação do submit
     if (formIsValid) {
         console.log("O formulário está 100% válido!");
+    } else {
+        console.log("ERROR!")
+        e.preventDefault();
     }
 
 }
