@@ -17,9 +17,12 @@ const passwordConfirmation = document.getElementById("password-confirmation")
 const typeAccount = document.getElementById("type-account")
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-    checkInputs();
+   valida = checkInputs();
+
+   if (valida === false){
+    e.preventDefault();
+   }
 });
 
 function checkInputs() {
@@ -151,10 +154,9 @@ function checkInputs() {
 
     // Validação do submit
     if (formIsValid) {
-        console.log("O formulário está 100% válido!");
+        return true;
     } else {
-        console.log("ERROR!")
-        e.preventDefault();
+        return false;
     }
 
 }
@@ -180,4 +182,31 @@ function setSuccessFor(input) {
 // Checar validação do e-mail
 function checkEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+
+// Checar validação de Idade
+function validadata(){
+    var data = document.getElementById("birth-date").value; // pega o valor do input
+    data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+    var data_array = data.split("-"); // quebra a data em array
+    
+    // para o IE onde será inserido no formato dd/MM/yyyy
+    if(data_array[0].length != 4){
+       data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+    }
+    
+    // comparo as datas e calculo a idade
+    var hoje = new Date();
+    var nasc  = new Date(data);
+    var idade = hoje.getFullYear() - nasc.getFullYear();
+    var m = hoje.getMonth() - nasc.getMonth();
+    if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;
+    
+    if(idade < 18){
+       alert("Infelizmente ainda não é possivel abrir uma conta para você, pessoas menores de 18 não podem se cadastrar. "
+            +"Volte quando completar 18 anos", window.location.href = "./home.html");
+       return false;
+
+    }
 }
