@@ -6,9 +6,7 @@ const themeToggler = document.querySelector(".theme-toggler");
 const containerTable = document.querySelector(".container-table");
 const tableTransactions = document.querySelector(".transactions");
 
-const BtnContatos = document.querySelector("#contatos");
 
-const tableContatos = document.querySelector(".contatos");
 
 // Show sidebar
 menuBtn.addEventListener('click', () => {
@@ -29,64 +27,27 @@ themeToggler.addEventListener('click', () => {
 
 })
 
-// Fill orders in table
-Orders.forEach(order => {
-        const tr = document.createElement('tr');
-        const trContent = `
-                            <td>${order.UserName}</td> 
-                            <td>${order.OrderNumber}</td>
-                            <td>${order.Value}</td>
-                            <td class="${order.Type === 'Saque' ? 'danger' : 
-                            order.Type === 'Depósito' ? 'success' : 
-                            order.Type === 'PIX' ? 'primary' :'warning'}">
-                            ${order.Type}</td>
-                            <td class="primary">Details</td>
-                            `;
-                            // <td> Célula de dados
-    tr.innerHTML = trContent;
-    tableTransactions.querySelector('table tbody').appendChild(tr);
+// Active Buttons
+const dashboard = document.querySelector("#dashboard");
+const contatos = document.querySelector("#contatos");
+const extrato = document.querySelector("#extrato");
+const analytics = document.querySelector("#analytics");
+const settings = document.querySelector("#settings");
+
+dashboard.addEventListener('click', () => {
+  dashboard.classList.add('active');
+  contatos.classList.remove('active');
+  extrato.classList.remove('active');
+  analytics.classList.remove('active');
+  settings.classList.remove('active');
 })
-
-
-// TABLE CONTATOS
-
-BtnContatos.addEventListener('click', () =>{
-  cont();
+contatos.addEventListener('click', () => {
+  contatos.classList.add('active');
+  dashboard.classList.remove('active');
+  extrato.classList.remove('active');
+  analytics.classList.remove('active');
+  settings.classList.remove('active');
 })
-
-function cont () {
-    // BtnContatos.classList.add('active'); //Colocar função de liga e desliga
-    tableTransactions.style.display = "none";
-    tableContatos.style.display = "table";
-    containerTable.style.height = "35rem";
-    // orderALL.style.visibility = "hidden";
-    // insights.style.display = "none";
-    // availableProduts.style.display = "none";
-    // main.style.width = "140%";
-    recentOrders.querySelector('h2').textContent = "Contatos";
-
-    Contatos.forEach(order => {
-        const tr = document.createElement('tr');
-        const trContent = `
-                            <td>${order.Name}</td> 
-                            <td>${order.CPF}</td>
-                            <td>${order.Agencia}</td>
-                            <td>${order.Conta}</td>
-                            <td>${order.PIX}</td>
-                            `;
-                            // <td> Célula de dados
-        tr.innerHTML = trContent;
-        tableContatos.querySelector('table tbody').appendChild(tr);
-    })
-}
-
-
-
-
-
-
-
-
 
 //circle insigths percent
 var circle = document.querySelector('.insights circle');

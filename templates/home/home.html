@@ -16,22 +16,21 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
         
         <!-- CSS -->
-        <link rel="stylesheet" href="css/home/style_home.css">
+        <link rel="stylesheet" href="../../static/css/home/style_home.css">
         
         <!-- JavaScript -->
-        <script src="scr/home/script_home.js"></script>
+        <script src="../../static/js/home/script_home.js"></script>
 
         <title>Developers Bank</title>
     </head>
     <body>
         <header>
             <nav class="navigation">
-                <a href="#" class="logo">D<span>eveloper</span>S B<span>an</span>K</a>
+                <a href="#" class="logo">JM <span>BANK</span></a>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="#">Home</a></li>
-                    <li class="nav-item"><a href="#1">About</a></li>
-                    <li class="nav-item"><a href="#">Menu</a></li>
-                    <li class="nav-item"><a href="#">Contact</a></li>
+                    <li class="nav-item"><a href="#5">Gerente</a></li>
+                    <li class="nav-item"><a href="#6">Sobre</a></li>
+                    <li class="nav-item"><a href="#7">Contato</a></li>
                     <span class="material-icons-sharp">person</span>
                 </ul>
                 <div class="menu">
@@ -43,12 +42,12 @@
         </header>
         <!-------------------- END HEADER -------------------->
         <main>
-            <section class="home">
+            <section class="home" id="1">
                 <div class="home-text">
-                    <h4 class="text-h4">Welcome DeveloperS BanK</h4>
-                    <h1 class="text-h1">The bank made for developers</h1>
-                    <p class="text-p">Come be part of this elite.</p>
-                    <a href="open_account.html" class="home-btn">Create account</a>
+                    <h4 class="text-h4">Bem vindo ao JM Bank</h4>
+                    <h1 class="text-h1">O banco feito para desenvolvedores</h1>
+                    <p class="text-p">Venha fazer parte desta elite.</p>
+                    <a href="/open_account" class="home-btn">Criar conta</a>
                 </div>
                 <div class="home-img">
                     <!-- <img src="img/home/guy-4541015.svg" alt=""> -->
@@ -56,7 +55,7 @@
             </section>
             <!-------------------- END LANDING PAGE 1 -------------------->
             
-            <section class="home2" id="1">
+            <section class="home2" id="2">
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col">
                         <div class="card">
@@ -129,16 +128,16 @@
                 </div>
             </section>
             <!-------------------- END LANDING PAGE 2 -------------------->
-            <section class="home3">
+            <section class="home3" id="3">
                 <div class="card mb-3" style="max-width: 100%;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="img/home/predio.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="../../static/img/home/predio.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h1 class="card-title">Security, economy and freedom for you and your money</h1>
-                                <h5 class="card-text">Be prepared for the possibilities of the global market:</h5>
+                                <h1 class="card-title">Segurança, economia e liberdade para você e seu dinheiro</h1>
+                                <h5 class="card-text">Esteja preparado para as possibilidades do mercado global:</h5>
                                 <p class="card-text">
                                     <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 3C16.982 3 21 7.018 21 12C21 16.982 16.982 21 12 21" stroke="var(--honeydew)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -147,7 +146,7 @@
                                         <path d="M4.01 7.858C8.902 9.369 15.098 9.369 19.989 7.858" stroke="var(--honeydew)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
                                         <path d="M19.99 16.142C15.098 14.631 8.902 14.631 4.011 16.142" stroke="var(--honeydew)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
                                     </svg>
-                                    Banking in the currency that “speaks all languages"
+                                    Bancarização na moeda que “fala todas as línguas"
                                 </p>
                                 <p class="card-text">
                                     <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +161,7 @@
                                         <path d="M15.0013 17.0021H17.0021C17.5546 17.0021 18.0025 16.5542 18.0025 16.0017V12" stroke="var(--honeydew)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
                                         <path d="M8.99875 17.9441V12L4.99709 7.99833V4.99708H5.9975L8.99875 7.99833H13.0004C14.1054 7.99833 15.0013 8.89414 15.0013 9.99917V21.0037" stroke="var(--honeydew)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
                                     </svg>
-                                    Savings from a genuinely American account
+                                    Economia de uma conta genuinamente americana
                                 </p>
                                 <p class="card-text">
                                     <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,9 +177,9 @@
                                         <path d="M9.5 16.751V17.251" stroke="var(--honeydew)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
                                         <path d="M8.198 16.214C8.392 16.532 8.724 16.752 9.125 16.752H9.5H9.947C10.529 16.752 11 16.28 11 15.699C11 15.216 10.671 14.795 10.203 14.677L8.797 14.324C8.329 14.207 8 13.786 8 13.303C8 12.721 8.472 12.25 9.053 12.25H9.5H9.875C10.275 12.25 10.606 12.469 10.8 12.786" stroke="var(--honeydew)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
                                     </svg>
-                                    Versatility for all your non-BRL transactions
+                                    Versatilidade para todas suas transações que não são em R$
                                 </p>
-                                <p class="card-text"><small class="text-muted">Here you can everything!</small></p>
+                                <p class="card-text"><small class="text-muted">Aqui você pode tudo!</small></p>
                             </div>
                         </div>
                     </div>
@@ -188,36 +187,36 @@
             </section>
             <!-------------------- END LANDING PAGE 3 -------------------->
 
-            <section class="home4">
+            <section class="home4" id="4">
                 <div class="home-left">
-                    <h1><b>STOP</b><span>focusing on the money, conquer your financial independence!</span></h1>
-                    <h5>At Developers Bank, your money works for you.</h5>
-                    <p><small>Open your bank account now most loved by developers.</small></p>
-                    <a href="open_account.html" class="home-btn">Create account</a>
+                    <h1><b>PARE</b><span> de focar no dinheiro, conquiste sua independência financeira!</span></h1>
+                    <h5>Aqui no JM Bank, seu dinheiro trabalha para você.</h5>
+                    <p><small>Abra agora sua conta bancária no banco mais amada pelos desenvolvedores.</small></p>
+                    <a href="/open_account" class="home-btn">Criar conta</a>
                 </div>
                 <div class="home-right">
-                    <img src="img/home/men.jpg" alt="">
+                    <img src="../../static/img/home/men.jpg" alt="">
                 </div>
             </section>
             <!-------------------- END LANDING PAGE 4 -------------------->
 
-            <section class="home5">
+            <section class="home5" id="5">
                 <div class="home-left">
-                    <img src="img/home/bankManager.jpg" alt="">
+                    <img src="../../static/img/home/bankManager.jpg" alt="">
                 </div>
                 <div class="home-right">
-                    <h1><b>MANAGER</b></h1>
+                    <h1><b>GERENTE</b></h1>
                     <h2>focusing on the money, conquer your financial independence!</h2>
                     <h5>At Developers Bank, your money works for you.</h5>
                     <p><small>Open your bank account now most loved by developers.</small></p>
-                    <a href="open_account.html" class="home-btn">Create account</a>
+                    <a href="/open_account" class="home-btn">Create account</a>
                 </div>
             </section>
             <!-------------------- END LANDING PAGE 5 -------------------->
 
-            <section class="home6">
+            <section class="home6" id="6">
                 <div class="home-left">
-                    <h1><b>ABOUT</b></h1>
+                    <h1><b>SOBRE</b></h1>
                     <h2>focusing on the money, conquer your financial independence!</h2>
                     <h5>At Developers Bank, your money works for you.</h5>
                     <p><small>Open your bank account now most loved by developers.</small></p>
@@ -226,10 +225,10 @@
             <!-------------------- END LANDING PAGE 6 -------------------->
             
         </main>
-        <footer>
+        <footer id="7">
             <div class="btn">
                 <h2>Ainda não é cliente?</h2>
-                <a href="open_account.html" class="home-btn">Create account</a>
+                <a href="/open_account" class="home-btn">Criar conta</a>
             </div>
             <div class="grid-contacts">
                 <div class="grid">
@@ -260,7 +259,7 @@
                 </div>
             </div>
             <div class="end-footer">
-                <p>&copy;DevelopersBankOficial - CNPJ 47.038.629/001-94</p>
+                <p>&copy;JMBankOficial - CNPJ 03.709.814/0001-98</p>
                 <p>Av. Eng. Eusébio Stevaux, 823 - Santo Amaro, São Paulo - SP, 04696-000</p>
             </div>
         </footer>

@@ -1,0 +1,38 @@
+{% extends "imports.html" %}
+{% block conteudo %}
+<div class="container">
+    {% include "aside.html" %}
+    <main>
+        {% include "saldo.html" %}
+        <div class="recent-orders">
+            <h2>Contatos</h2>
+            <div class="container-table full-tables">
+                <table class="contatos ">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>CPF</th>
+                            <th>Agência</th>
+                            <th>Conta Corrente</th>
+                            <th>Chave PIX</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr> and <td> are in JS -->
+                        <tr>
+                            <td>Matheus Lopes Trindade</td>
+                            <td>422.225.548-37</td>
+                            <td>0001</td>
+                            <td>12345-67</td>
+                            <td>422.225.548-37</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <div class="right">
+        {% include "top_right.html" %}
+    </div>
+</div>
+{% endblock %}

@@ -218,7 +218,7 @@ aside .sidebar a span{
 
 aside .sidebar a:last-child{
     position: absolute;
-    bottom: 2rem;
+    bottom: 10rem;
     width: 100%;
 }
 
@@ -424,8 +424,9 @@ main .recent-orders a{
     color: var(--color-primary);
 }
 
-main .recent-orders .contatos{
-    display: none;
+main .full-tables{
+    min-width: 140%;
+    min-height: 40rem;
 }
 
 /* =================== RIGHT ==================== */
@@ -607,7 +608,7 @@ main .recent-orders .contatos{
     }
     aside .sidebar a:last-child{
         position: relative;
-        margin-top: 1.8rem;
+        margin-top: 18rem;
     }
     main .insights{
         grid-template-columns: 1fr;
