@@ -205,7 +205,7 @@ function validadata(){
     
     if(idade < 18){
        alert("Infelizmente ainda não é possivel abrir uma conta para você, pessoas menores de 18 não podem se cadastrar. "
-            +"Volte quando completar 18 anos", window.location.href = "./home.html");
+            +"Volte quando completar 18 anos", window.location.href = "/");
        return false;
 
     }
