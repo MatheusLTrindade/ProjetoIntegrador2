@@ -26,4 +26,5 @@ def contatos():
 def extrato():
     return render_template("./user/extrato.html")
 
-app.run(port=8080)
+if __name__ == '__main__':
+    app.run(debug=True, port=8080)
