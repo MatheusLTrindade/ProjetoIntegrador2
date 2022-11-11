@@ -8,30 +8,20 @@ function onlynumber(e) {
         if (Evento.preventDefault) {
             Evento.preventDefault ();
         }
-
     }
-
-
 }
 
 function mask(){
     $("#cpf").keypress(function() {
        $(this).mask('000.000.000-00');
     });
-    
-    
-    
 }
 
 
 function verificar() { 
-    
     let senha = document.getElementById("senha").value
-  
     // alert(senha)
       if (senha.length < 10) {
         alert( " senha incorreta")
-
     }
 }
-    
