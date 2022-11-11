@@ -6,7 +6,36 @@ const themeToggler = document.querySelector(".theme-toggler");
 const containerTable = document.querySelector(".container-table");
 const tableTransactions = document.querySelector(".transactions");
 
+const tipo = document.getElementById("tipo");
+const valor = document.querySelector("#valor");
+const dest = document.querySelector("#dest");
+const date = document.querySelector("#date");
 
+const alterarEmail = document.querySelector("#alterar-email");
+const email = document.querySelector("#email");
+const senha = document.querySelector("#senha");
+const cancelar = document.querySelector("#cancelar");
+const confirmar = document.querySelector("#confirmar");
+const ok = document.querySelector("#ok");
+
+function ontype(){
+    if(tipo.value !== "null"){
+        valor.style.display = "flex";
+    }
+    if(tipo.value === "doc" || tipo.value === "ted" || tipo.value === "pix"){
+        date.style.display = "flex";
+        dest.style.display = "flex";
+    }
+}
+
+alterarEmail.addEventListener('click', () => {
+    alterarEmail.style.display = "none";
+    ok.style.display = "none";
+    senha.style.display = "flex";
+    cancelar.style.visibility = "visible";
+    confirmar.style.visibility = "visible";
+    email.removeAttribute("disabled");
+})
 
 // Show sidebar
 menuBtn.addEventListener('click', () => {
@@ -17,6 +46,12 @@ menuBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     sideMenu.style.display = "none";
 })
+
+if(window.matchMedia("(max-width: 768px)").matches){
+    sideMenu.addEventListener('click', () => {
+        sideMenu.style.display = "none";
+    })
+}
 
 // Change theme
 themeToggler.addEventListener('click', () => {
@@ -32,22 +67,28 @@ const dashboard = document.querySelector("#dashboard");
 const contatos = document.querySelector("#contatos");
 const extrato = document.querySelector("#extrato");
 const analytics = document.querySelector("#analytics");
+const transactions = document.querySelector("#transactions");
 const settings = document.querySelector("#settings");
 
-dashboard.addEventListener('click', () => {
-  dashboard.classList.add('active');
-  contatos.classList.remove('active');
-  extrato.classList.remove('active');
-  analytics.classList.remove('active');
-  settings.classList.remove('active');
-})
 contatos.addEventListener('click', () => {
-  contatos.classList.add('active');
-  dashboard.classList.remove('active');
-  extrato.classList.remove('active');
-  analytics.classList.remove('active');
-  settings.classList.remove('active');
+    contatos.classList.add('active');
+    dashboard.classList.remove('active', 'active');
+    extrato.classList.remove('active');
+    analytics.classList.remove('active');
 })
+extrato.addEventListener('click', () => {
+    extrato.classList.add('active');
+    dashboard.classList.remove('active', 'active');
+    contatos.classList.remove('active');
+    analytics.classList.remove('active');
+})
+analytics.addEventListener('click', () => {
+    analytics.classList.add('active');
+    dashboard.classList.remove('active', 'active');
+    contatos.classList.remove('active');
+    extrato.classList.remove('active');
+})
+
 
 //circle insigths percent
 var circle = document.querySelector('.insights circle');
