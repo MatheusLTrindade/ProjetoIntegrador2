@@ -545,6 +545,7 @@ footer .end-footer p{
         gap: 5rem;
     }
     .home-text{
+        padding-top: 11rem;
         width: auto;
         margin: 0 1rem;
     }
