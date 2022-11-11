@@ -18,7 +18,7 @@
         <form >
             <input id="cpf" type="text" name="CPF"  placeholder="CPF" autofocus onkeypress="onlynumber(), mask()">
             <input id="senha"  type="password" name="senha"  placeholder="Senha" autofocus >
-            <input id="btn" class="botao"  type="submit" value="Entrar" onclick="verificar()" href="/user" >
+            <a href="/user" id="btn" class="botao" onclick="verificar()">Entrar</a>
         </form>
         <p>Ainda não tem uma conta <a href="/open_account"> Criar uma conta </a></p>
     </section>

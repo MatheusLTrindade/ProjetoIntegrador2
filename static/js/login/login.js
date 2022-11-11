@@ -17,11 +17,10 @@ function mask(){
     });
 }
 
-
 function verificar() { 
     let senha = document.getElementById("senha").value
     // alert(senha)
       if (senha.length < 10) {
-        alert( " senha incorreta")
+        alert( " senha incorreta");
     }
 }

@@ -96,6 +96,10 @@
     border: 0.1rem solid #AAA;
 }
 
+#dest, #valor, #date{
+    display: none;
+}
+
 #senha{
     display: none;
 }
