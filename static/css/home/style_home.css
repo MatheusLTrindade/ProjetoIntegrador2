@@ -77,6 +77,10 @@ body{
     transition: all 0.5s;
 }
 
+.navigation ul .item-home{
+    display: none;
+}
+
 .navigation ul li a:hover{
     color: var(--flourescent-blue);
     font-size: 120%;
@@ -184,6 +188,32 @@ body{
     animation: none;
     background: var(--flourescent-blue);
 }
+
+.home .return-home{
+    z-index: 1;
+    display: flex;
+    position: fixed;
+    margin-left: 83vw;
+    margin-top: 100vh;
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.home .return-home a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--ligth-sea-green);
+    padding: 1rem;
+    color: var(--sonic-silver);
+    transition: all 0.5s;
+}
+
+.home .return-home a:hover{
+    background: var(--flourescent-blue);
+}
+
 
 /* LANDING PAGE 2 */
 .home2{
@@ -473,6 +503,9 @@ footer .end-footer p{
         position: fixed;
         background: var(--jet);
     }
+    .navigation ul .item-home{
+        display: flex;
+    }
     .menu{
         display: block;
     }
@@ -525,10 +558,8 @@ footer .end-footer p{
     .home p{
         font-size: 15px;
     }
-    .home-img{
-        width: 150%;
-        margin-left: -12.8rem;
-        margin-top: -10rem;
+    .home .return-home{
+        display: none;
     }
 
     .home2{
@@ -549,6 +580,15 @@ footer .end-footer p{
     .home4 .home-left{
         width: 100%;
         height: auto;
+    }
+
+    .home4 .home-left h1{
+        text-align: center;
+        line-height: 2.5rem;
+    }
+
+    .home4 .home-left h1 span{
+        line-height: 1rem;
     }
 
     .home4 .home-right{
@@ -572,6 +612,12 @@ footer .end-footer p{
     .home5 .home-right{
         width: 100%;
         height: auto;
+        padding: 10%;
+    }
+
+    .home5 .home-right h1{
+        text-align: center;
+        font-size: 4rem;
     }
 
     .home6 {
@@ -582,6 +628,12 @@ footer .end-footer p{
     .home6 .home-left{
         width: 100%;
         height: auto;
+        padding: 10%;
+    }
+
+    .home6 .home-left h1{
+        font-size: 5.5rem;
+        text-align: center;
     }
 
     footer{
