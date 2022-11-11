@@ -620,6 +620,9 @@ main .full-tables{
         left: 54%;
         transform: translateX(-50%);
     }
+    main .full-tables{
+        min-width: 100%;
+    }
     
 }
 
