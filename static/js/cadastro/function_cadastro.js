@@ -14,7 +14,7 @@ function onlynumber(evt) {
 // Busca CEP
 function viacep() {
    $.ajax({
-      url: "http://viacep.com.br/ws/" + $("#cep").val() + "/json/",
+      url: "https://viacep.com.br/ws/" + $("#cep").val() + "/json/",
       dataType: "json",
       success: function (resposta) {
          console.log(resposta);
