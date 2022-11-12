@@ -40,5 +40,5 @@ def analytics_adm():
     return render_template("./adm/analytics-adm.html")
 
 if __name__ == '__main__':
-    # port = int(os.getenv('PORT'), '5000')
-    app.run(debug=True,host='0.0.0.0', port = 8080)
+    port = int(os.getenv('PORT'), '5000')
+    app.run(debug=True,host='0.0.0.0', port = port)
