@@ -58,8 +58,7 @@ html{
 }
 
 body{
-
-    width: 100vh;
+    width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-size: 0.88rem;
@@ -92,7 +91,7 @@ body{
     width: 100%;
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 14rem 55rem 23rem;
+    grid-template-columns: 14rem auto 23rem;
 }
 
 a{
@@ -344,7 +343,7 @@ main .insights small{
 
 /* =================== RECENT ORDERS ==================== */
 main .transaction-volume{
-    width: 145%;
+    width: 100%;
     margin-top: 2rem;
 }
 
@@ -541,7 +540,7 @@ main .full-tables{
     }
     aside .sidebar a:last-child{
         position: relative;
-        margin-top: 1.8rem;
+        margin-top: 18rem;
     }
     main .insights{
         grid-template-columns: 1fr;
