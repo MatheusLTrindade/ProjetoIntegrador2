@@ -58,8 +58,7 @@ html{
 }
 
 body{
-
-    width: 98%;
+    width: 99vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-size: 0.88rem;
@@ -264,6 +263,7 @@ aside .sidebar .message-count{
 /* =================== MAIN ==================== */
 main{
     margin-top: 1.4rem;
+    z-index: 1;
 }
 
 main .balance{
@@ -589,6 +589,12 @@ main .full-tables{
     aside .sidebar{
         height: 75vh;
     }
+
+    main .full-tables{
+        min-width: 118%;
+        min-height: 40rem;
+    }
+
 }
 
 /* =================== @MEDIA IPAD ==================== */
