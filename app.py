@@ -15,10 +15,6 @@ def login():
 def cadastro():
     return render_template("./cadastro/open_account.html")
 
-@app.route("/adm")
-def dashboard_adm():
-    return render_template("./adm/index_adm.html")
-
 @app.route("/user")
 def dashboard_user():
     return render_template("./user/index_user.html")
@@ -31,6 +27,18 @@ def contatos():
 def extrato():
     return render_template("./user/extrato.html")
 
+@app.route("/adm")
+def dashboard_adm():
+    return render_template("./adm/index_adm.html")
+
+@app.route("/adm/clientes")
+def clientes():
+    return render_template("./adm/clientes.html")
+
+@app.route("/adm/analytics")
+def analytics_adm():
+    return render_template("./adm/analytics-adm.html")
+
 if __name__ == '__main__':
     port = int(os.getenv('PORT'), '5000')
-    app.run(host='0.0.0.0', port = port)
+    app.run(debug=True,host='0.0.0.0', port = port)

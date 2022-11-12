@@ -360,6 +360,76 @@ main .transaction-volume .grafic:hover{
     box-shadow: none;
 }
 
+/* =================== RECENT ORDERS ==================== */
+main .recent-orders{
+    margin-top: 2rem;
+}
+
+main.recent-orders h2{
+    margin-bottom: 0.8rem;
+}
+
+main .container-table{
+    background: var(--color-white);
+    width: 100%;
+    overflow-y: scroll;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+main .container-table::-webkit-scrollbar {
+    width: 0.3rem;
+}    
+main .container-table::-webkit-scrollbar-track {
+    margin: 4rem 0 2rem 0;
+    background: transparent;
+    border-radius: 20px;
+}   
+main .container-table::-webkit-scrollbar-thumb {
+    background: #8989895d;
+    border-radius: 10px;
+}    
+main .container-table::-webkit-scrollbar-thumb:hover {
+    background: #383838ab
+}
+
+main .recent-orders table{
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+main .recent-orders table:hover{
+    box-shadow: none;
+}
+
+main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td{
+    border: none;
+}
+
+main .recent-orders a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+main .full-tables{
+    min-width: 140%;
+    min-height: 40rem;
+}
+
 /* =================== RIGHT ==================== */
 .right{
     margin-top: 1.4rem;
@@ -477,6 +547,15 @@ main .transaction-volume .grafic:hover{
         position: absolute;
         left: 54%;
         transform: translateX(-50%);
+    }
+    main .recent-orders{
+        width: 87%;
+        position: absolute;
+        left: 54%;
+        transform: translateX(-50%);
+    }
+    main .full-tables{
+        min-width: 100%;
     }
     
 }

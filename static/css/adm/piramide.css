@@ -1,0 +1,11 @@
+.chartCard {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chartBox {
+    min-width: 35rem;
+    max-width: 100%;
+    background: transparent;
+}
