@@ -35,6 +35,10 @@ def dashboard_adm():
 def clientes():
     return render_template("./adm/clientes.html")
 
+@app.route("/adm/ordens")
+def ordens():
+    return render_template("./adm/ordens.html")
+
 @app.route("/adm/analytics")
 def analytics_adm():
     return render_template("./adm/analytics-adm.html")
