@@ -4,6 +4,7 @@
 /* =================== ROOT VARIABLES ==================== */
 :root{
     /* == COLOR == */
+    --ligth-sea-green: #26BFBA;
     --color-primary: #7380EC;
     --color-danger: #FF7782;
     --color-success: #41F1B6;
@@ -180,6 +181,10 @@ aside .logo{
 aside .logo img{
     width: 2rem;
     height: 2rem;
+}
+
+aside .logo span{
+    color: var(--ligth-sea-green);
 }
 
 aside .close{

@@ -54,14 +54,9 @@ body{
     position: absolute;
 }
 
-.navigation .logo{
-    color: var(--ligth-sea-green);
-    font-size: 1.7rem;
-    font-weight: 600;
-}
-
-.logo span{
-    color: var(--sonic-silver);
+.navigation .logo img{
+    width: 2.5rem;
+    height: auto;
 }
 
 .navigation ul{
