@@ -86,14 +86,21 @@
     padding: 0.45rem;
     border-radius: 0 1rem 1rem 0;
     border: 0.1rem solid #AAA;
+    background: transparent;
+    color: var(--color-dark);
 }
 
 .modal-body .form-group input{
+    background: transparent;
     color: var(--color-dark);
     flex: 1;
     padding: 0.45rem;
     border-radius: 0 1rem 1rem 0;
     border: 0.1rem solid #AAA;
+}
+
+.modal-body .form-group .options{
+    background-color: var(--color-background);
 }
 
 #dest, #valor, #date{
