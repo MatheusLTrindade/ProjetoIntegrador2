@@ -103,7 +103,7 @@
     background-color: var(--color-background);
 }
 
-#dest, #valor, #date{
+#categoria, #dest, #valor, #date{
     display: none;
 }
 
