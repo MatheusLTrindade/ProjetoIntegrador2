@@ -27,6 +27,10 @@ def contatos():
 def extrato():
     return render_template("./user/extrato.html")
 
+@app.route("/user/analytics")
+def analytics_user():
+    return render_template("./user/analytics_user.html")
+
 @app.route("/adm")
 def dashboard_adm():
     return render_template("./adm/index_adm.html")
@@ -44,5 +48,5 @@ def analytics_adm():
     return render_template("./adm/analytics-adm.html")
 
 if __name__ == '__main__':
-    # port = int(os.getenv('PORT'), '5000')
-    app.run(debug=True,host='0.0.0.0', port = 8080)
+    port = int(os.getenv('PORT'), '5000')
+    app.run(debug=True,host='0.0.0.0', port = port)

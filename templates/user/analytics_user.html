@@ -1,0 +1,20 @@
+{% extends "./user/imports.html" %}
+{% block conteudo %}
+<div class="container">
+    {% include "./user/modal_transacoes.html" %}
+        {% include "./user/modal_settings.html" %}
+        {% include "./user/aside.html" %}
+    <!-------------------- END SIDEBAR -------------------->
+    <main>
+        <h1>Dashboard</h1>
+
+        <div class="recent-orders">
+            <h2>Analytics</h2>
+            
+        </div>
+    </main>
+    <div class="right">
+        {% include "./user/top_right.html" %}
+    </div>
+</div>
+{% endblock %}
