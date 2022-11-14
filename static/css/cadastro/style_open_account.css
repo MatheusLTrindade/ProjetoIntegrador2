@@ -115,7 +115,7 @@ footer small{
 @media (max-width:768px){
 
     .top .logo{
-        position: fixed;
+        position: relative;
         justify-content: right;
         align-items: flex-end;
         margin-left: -5vw;
