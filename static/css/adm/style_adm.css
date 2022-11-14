@@ -648,6 +648,9 @@ main .full-tables{
 @media screen and (max-width: 768px){
     .container{
         width: 100%;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
         grid-template-columns: 1fr;
     }
     aside{
@@ -682,7 +685,6 @@ main .full-tables{
         margin-top: 8rem;
         padding: 0 1rem;
     }
-
     main .transaction-volume{
         position: relative;
         margin: 3rem 0 0 -1rem;

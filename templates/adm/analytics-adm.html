@@ -1,6 +1,6 @@
 {% extends "./adm/imports-adm.html" %}
 {% block conteudo %}
-    <main>
+    <main class="grafic">
         <h1>Dashboard</h1>
 
         <div class="date">
@@ -8,39 +8,25 @@
         </div>
         <h2><br>Analytics</h2>
         
-        <div class="insights">
-            <div class="piramideGrafic">
-                <div class="chartCard">
-                    <div class="chartBox">
-                        <canvas id="PiramideChart"></canvas>
+        <div class="transaction-volume">
+            <div class="grafic">
+                <div class="piramideGrafic">
+                    <div class="chartCard">
+                        <div class="chartBox">
+                            <canvas id="PiramideChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="insights">
-            <div class="expenses">
-                <div class="middle">
-                    <h3>GRAFICO 2</h3>
-                    <h2>100</h2>
-                </div>
-                <small class="text-muted">No último mês</small>
-            </div>
-            <div class="income">
-                <div class="middle">
-                    <h3>GRAFICO 3</h3>
-                    <h2>100</h2>
-                </div>
-                <small class="text-muted">Last 24 Hours</small>
+        <div class="transaction-volume">
+            <div class="grafic">
+                <div id ='chart' class ='chart'”></div>
             </div>
         </div>
-        <div class="insights">
-            <div class="piramideGrafic">
-                <div class="chartCard">
-                    <div class="chartBox">
-                        <h3>GRAFICO 4</h3>
-                        <canvas id="PiramideChart"></canvas>
-                    </div>
-                </div>
+        <div class="transaction-volume">
+            <div class="grafic">
+                <div id ='chart2' class ='chart2'”></div>
             </div>
         </div>
     </main>

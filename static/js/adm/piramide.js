@@ -3,29 +3,8 @@ const male = [3, 6, 6, 9, 12, 13, 19];
 const maleData = [];
 male.forEach(e => maleData.push(e * -1));
 
-// setup 
-const data = {
-    labels: ['65+', '56 - 65', '46 - 55', '36 - 45', '26 - 35', '19 - 25', '18'],
-    datasets: [{
-        label: 'Masculino',
-        data: maleData,
-        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-        borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1,
-        borderRadius: 5
-    },
-    {
-        label: 'Feminino',
-        data: [4, 7, 9, 10, 13, 14, 20],
-        backgroundColor: 'rgba(255, 26, 104, 0.5)',
-        borderColor: 'rgba(255, 26, 104, 1)',
-        borderWidth: 1,
-        borderRadius: 5
-    }]
-};
-
 //  block tooltip
-const tooltip = {
+const tooltip2 = {
     yAlign: 'bottom',
     titleAlign: 'center',
     callbacks: {
@@ -36,9 +15,27 @@ const tooltip = {
 };
 
 // config 
-const config = {
+const config2 = {
     type: 'bar',
-    data,
+    data: {
+        labels: ['65+', '56 - 65', '46 - 55', '36 - 45', '26 - 35', '19 - 25', '18'],
+        datasets: [{
+            label: 'Masculino',
+            data: maleData,
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1,
+            borderRadius: 5
+        },
+        {
+            label: 'Feminino',
+            data: [4, 7, 9, 10, 13, 14, 20],
+            backgroundColor: 'rgba(255, 26, 104, 0.5)',
+            borderColor: 'rgba(255, 26, 104, 1)',
+            borderWidth: 1,
+            borderRadius: 5
+        }]
+    },
     options: {
         indexAxis: 'y',
         scales: {
@@ -56,7 +53,7 @@ const config = {
             }
         },
         plugins: {
-            tooltip,
+            tooltip2,
         }
     }
 };
@@ -64,5 +61,5 @@ const config = {
 // render init block
 const PiramideChart = new Chart(
 document.getElementById('PiramideChart'),
-config
+config2
 );
