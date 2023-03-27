@@ -29,9 +29,7 @@
 
 - **BIBLIOTECAS**<br>
 
-    ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
-    - PANDAS (ANÁLISE E MANIPULAÇÃO DE DADOS)<br>
-
-    ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-    - CHARTJS (CRIAÇÃO DE GRÁFICOS)
-  
+    | Linguagem | Biblioteca | Descrição |
+    | :--- | :---: | ---: |
+    | ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white) | PANDAS | ANÁLISE E MANIPULAÇÃO DE DADOS |
+    | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | CHARTJS | CRIAÇÃO DE GRÁFICOS |
