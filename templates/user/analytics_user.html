@@ -10,14 +10,21 @@
 
         <div class="recent-orders">
             <h2>Analytics</h2>
-            
-            <div class="transaction-volume">
-                <div class="grafic">
-                    <div id ='chart' class ='chart'”></div>
-                </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-around">
+            <div class="grafic" style="width: 40%">
+                  <canvas id="chartDespesas"></canvas>
             </div>
 
+            <div class="grafic" style="width: 60%">
+                  <canvas id="myChart"></canvas>
+            </div>
         </div>
+        <div class="grafic" style="width: 100%">
+                  <canvas id="chartMovUser"></canvas>
+        </div>
+
     </main>
     <div class="right">
         {% include "./user/top_right.html" %}

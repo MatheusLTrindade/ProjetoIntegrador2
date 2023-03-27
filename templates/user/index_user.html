@@ -1,11 +1,32 @@
 {% extends "./user/imports.html" %}
 {% block conteudo %}
     <div class="container">
+        {#cor sucesso 0CC493#}
         {% include "./user/modal_transacoes.html" %}
         {% include "./user/modal_settings.html" %}
         {% include "./user/aside.html" %}
         <!-------------------- END SIDEBAR -------------------->
         <main>
+            {% with messages = get_flashed_messages() %}
+                {% if  'sucesso' in messages[0] %}
+                    <ul id="messages" class="list-unstyled">
+                    {% for message in messages %}
+                        <div class="" style="height: 50px; width: 100%; background-color:#1b9448; display: flex; justify-content: center; align-items: center; border-radius: 10px">
+                        <h5 style="color: white"> {{ message }} </h5>
+                        </div>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if  'sucesso' not in messages[0] %}
+                    <ul id="messages" class="list-unstyled">
+                    {% for message in messages %}
+                        <div class="" style="height: 50px; width: 100%; background-color:#b42912; display: flex; justify-content: center; align-items: center; border-radius: 10px">
+                        <h5 style="color: white"> {{ message }} </h5>
+                        </div>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
             <h1>Dashboard</h1>
             
             {% include "./user/saldo.html" %}
@@ -22,7 +43,7 @@
                                 <circle cx='38' cy='38' r='36'></circle>
                             </svg>
                             <div class="number">
-                                <p class="percent">50</p>
+                                <p class="percent">{{ ((valor_percentual['saque'] or 0) + (valor_percentual['deposito'] or 0))  or 0 }}</p>
                                 <p>%</p>
                             </div>
                         </div>
@@ -40,13 +61,14 @@
                                 <circle cx='38' cy='38' r='36'></circle>
                             </svg>
                             <div class="number">
-                                <p class="percent">64</p>
+                                <p class="percent"> {{ ((valor_percentual['ted'] or 0) + (valor_percentual['doc'] or 0))  or 0  }} </p>
                                 <p>%</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-------------------- END EXPENSES -------------------->
+
                 <div class="income">
                     <span class="material-icons-sharp">pix</span>
                     <div class="middle">
@@ -58,7 +80,7 @@
                                 <circle cx='38' cy='38' r='36'></circle>
                             </svg>
                             <div class="number">
-                                <p class="percent">44</p>
+                                <p class="percent"> {{  valor_percentual['pix'] or 0 }} </p>
                                 <p>%</p>
                             </div>
                         </div>
@@ -68,75 +90,86 @@
             </div>
             <!-------------------- END INSIGHTS -------------------->
             <div class="recent-orders">
-                <h2>Recent Transaction</h2>
+                <h2 style="margin-bottom: 10px;"> Extrato resumido </h2>
                 <div class="container-table">
                     <table class="transactions"><!-- criar tabela -->
                         <thead><!-- títulos das colunas -->
                             <tr><!-- linha da tabela -->
-                                <th>User Name</th><!-- célula de cabeçalho -->
-                                <th>Order Number</th>
-                                <th>Value</th>
-                                <th>Type</th>
-                                <th></th>
+                                <!-- célula de cabeçalho -->
+                                <th>Data</th>
+                                <th> Tipo </th>
+                                <th>Fluxo</th>
+                                <th>Valor </th>
+                                <th>Saldo</th>
+
                             </tr>
                         </thead>
                         <tbody><!-- linha dos detalhes -->
                             <!-- <tr> and <td> are in JS -->
+                         {% for item_extrato in extrato %}
                             <tr>
-                                <td>Osvado Careca</td>
-                                <td>001</td>
-                                <td>R$ 4646,65</td>
-                                <td>TED</td>
-                                <td>Details</td>
+                            <td> {{ item_extrato.extrato_data.strftime('%d/%m/%Y')}}</td>
+                            <td> {{ item_extrato.operacao }} </td>
+                            <td> {{ item_extrato.fluxo}} </td>
+                            {% if item_extrato.valor >= 0 %}
+                            <td style="color: green;"> {{ item_extrato.valor}} </td>
+                            {% else %}
+                            <td style="color: red;"> {{ item_extrato.valor}} </td>
+                            {% endif %}
+                            <td> {{ item_extrato.saldo_atual | moeda }}</td>
+
                             </tr>
+                          {% endfor %}
                         </tbody>
                     </table>
                 </div>
                 <!-- END TABLE -->
                 <a href="/user/extrato">Show All</a>
             </div>
+
         </main>
         <!-------------------- END MAIN -------------------->
         <div class="right">
             {% include "./user/top_right.html" %} 
             <!-- END TOP -->
             <div class="recent-updates">
-                <h2>Noticias Recentes</h2>
-            <div class="updates">
+                    <h2>Noticias Recentes</h2>
+                <div class="updates">
                 
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="../../static/img/dash_user/infomoney.png" alt="">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="../../static/img/dash_user/infomoney.png" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>InfoMoney</b></p>
+                            <p>Itaú surpreende com crescimento em crédito de risco e inadimplência controlada, mas ação fecha em queda</p>
+                        </div>
                     </div>
-                    <div class="message">
-                        <p><b>InfoMoney</b></p>
-                        <p>Itaú surpreende com crescimento em crédito de risco e inadimplência controlada, mas ação fecha em queda</p>
+                    
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="../../static/img/dash_user/yahoo.svg" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Yahoo!</b></p>
+                            <p>Um império de criptomoedas de US$ 32 bilhões caiu. As consequências estão se espalhando muito além das criptomoedas.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="../../static/img/dash_user/yahoo.svg" alt="">
-                    </div>
-                    <div class="message">
-                        <p><b>Yahoo!</b></p>
-                        <p>Um império de criptomoedas de US$ 32 bilhões caiu. As consequências estão se espalhando muito além das criptomoedas.</p>
-                    </div>
-                </div>
-
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="../../static/img/dash_user/O-Globo.png" alt="">
-                    </div>
-                    <div class="message">
-                        <p><b>O Globo</b></p>
-                        <p>Ibovespa sobe, com ajuda de commodities, mas tem pior semana desde junho; dólar cai, mas avança 5,45% em cinco dias</p>
+                    
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="../../static/img/dash_user/O-Globo.png" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>O Globo</b></p>
+                            <p>Ibovespa sobe, com ajuda de commodities, mas tem pior semana desde junho; dólar cai, mas avança 5,45% em cinco dias</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-------------------- END RECENT UPDATES -------------------->
             <div class="sales-analytics">
-                <h2>Cotação Moedas</h2>
+                <h2> Cotações </h2>
 
                 <div class="item online" >
                     <div class="icon">
@@ -147,8 +180,12 @@
                             <h3>DOLAR</h3>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
-                        <h5 id="pct-dolar" class="success">+39%</h5>
-                        <h3 id="value-dolar">3849</h3>
+                        {% if '-' in cotacao['euro']['var'] %}
+                            <h5 id="pct-dolar" class="success"> {{ cotacao['dolar']['var'] }} </h5>
+                        {% else %}
+                            <h5 id="pct-dolar" class="danger">{{ cotacao['dolar']['var'] }}</h5>
+                        {% endif %}
+                        <h3 id="value-dolar">{{ cotacao['dolar']['today'] | moeda }}</h3>
                     </div>
                 </div>
 
@@ -161,8 +198,12 @@
                             <h3>EURO</h3>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
-                        <h5 id="pct-euro" class="danger">-17%</h5>
-                        <h3 id="value-euro">1100</h3>
+                        {% if '-' in cotacao['euro']['var'] %}
+                            <h5 id="pct-euro" class="danger">{{ cotacao['euro']['var'] }}</h5>
+                        {% else %}
+                            <h5 id="pct-euro" class="success">{{ cotacao['euro']['var'] }}</h5>
+                        {% endif %}
+                        <h3 id="value-euro">{{ cotacao['euro']['today'] | moeda }}</h3>
                     </div>
                 </div>
 
@@ -175,8 +216,12 @@
                             <h3>BITCOIN</h3>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
-                        <h5 id="pct-bitcoin" class="success">+25%</h5>
-                        <h3 id="value-bitcoin">849</h3>
+                        {% if '-' in cotacao['bitcoin']['var'] %}
+                            <h5 id="pct-bitcoin" class="danger">{{ cotacao['bitcoin']['var'] }} </h5>
+                        {% else %}
+                            <h5 id="pct-bitcoin" class="success">{{ cotacao['bitcoin']['var'] }} </h5>
+                        {% endif %}
+                        <h3 id="value-bitcoin">{{ cotacao['bitcoin']['today'] | moeda }}</h3>
                     </div>
                 </div>
 
@@ -186,3 +231,5 @@
         <!-------------------- END RIGHT -------------------->
     </div>
 {% endblock %}
+
+

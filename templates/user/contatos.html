@@ -15,21 +15,23 @@
                     <thead>
                         <tr>
                             <th>Nome</th>
+                            <th> Conta</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
                             <th>CPF</th>
-                            <th>Agência</th>
-                            <th>Conta Corrente</th>
-                            <th>Chave PIX</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- <tr> and <td> are in JS -->
+                        {%  for contato in contatos  %}
                         <tr>
-                            <td>Matheus Lopes Trindade</td>
-                            <td>422.225.548-37</td>
-                            <td>0001</td>
-                            <td>12345-67</td>
-                            <td>422.225.548-37</td>
+                            <td> {{ contato.nome }} </td>
+                            <td> {{ contato.conta }}</td>
+                            <td> {{ contato.email }}</td>
+                            <td> {{ contato.telefone }}</td>
+                            <td> {{ contato.cpf }}</td>
                         </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

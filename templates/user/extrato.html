@@ -6,32 +6,39 @@
         {% include "./user/aside.html" %}
     <!-------------------- END SIDEBAR -------------------->
     <main>
-        <h1>Dashboard</h1>
-        
+        <h1 style="margin-bottom: 8px">Extrato</h1>
         {% include "./user/saldo.html" %}
-
         <div class="recent-orders">
-            <h2>Extrato</h2>
+
                 <div class="container-table full-tables">
                     <table class="transactions"><!-- criar tabela -->
                         <thead><!-- títulos das colunas -->
                             <tr><!-- linha da tabela -->
-                                <th>User Name</th><!-- célula de cabeçalho -->
-                                <th>Order Number</th>
-                                <th>Value</th>
-                                <th>Type</th>
-                                <th>Date</th>
+                                <!-- célula de cabeçalho -->
+                                 <th>Data</th>
+                                <th> Tipo </th>
+                                <th>Fluxo</th>
+                                <th>Valor </th>
+                                <th>Saldo</th>
+
                             </tr>
                         </thead>
                         <tbody><!-- linha dos detalhes -->
                             <!-- <tr> and <td> are in JS -->
+                            {% for item_extrato in extrato %}
                             <tr>
-                                <td>Jhonatan Ribeiro Dos Santos</td>
-                                <td>001</td>
-                                <td>R$ 250,00</td>
-                                <td>PIX</td>
-                                <td>05/11/2022 23:55</td>
+                            <td> {{ item_extrato.extrato_data.strftime('%d/%m/%Y')}}</td>
+                            <td> {{ item_extrato.operacao}} </td>
+                            <td> {{ item_extrato.fluxo}} </td>
+                            {% if item_extrato.valor >= 0 %}
+                            <td style="color: green;"> {{ item_extrato.valor}} </td>
+                            {% else %}
+                            <td style="color: red;"> {{ item_extrato.valor}} </td>
+                            {% endif %}
+                            <td> {{ item_extrato.saldo_atual | moeda }}</td>
+
                             </tr>
+                          {% endfor %}
                         </tbody>
                     </table>
                 </div>

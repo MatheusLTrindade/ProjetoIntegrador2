@@ -376,7 +376,7 @@ main.recent-orders h2{
 main .container-table{
     background: var(--color-white);
     width: 100%;
-    max-height: 10rem;
+    max-height: 20rem;
     overflow-y: scroll;
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
@@ -436,12 +436,17 @@ main .full-tables{
 }
 
 main .transaction-volume{
-    width: 100%;
-    margin-top: 2rem;
+    width: 33%;
 }
 
 main.transaction-volume h2{
     margin-bottom: 0.8rem;
+}
+
+.parent_chart{
+    display: flex;
+    justify-content: center;
+
 }
 
 main .transaction-volume .grafic{
@@ -451,6 +456,7 @@ main .transaction-volume .grafic{
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    min-height: 420px;
 }
 
 main .transaction-volume .grafic:hover{
